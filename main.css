@@ -1,0 +1,43 @@
+/* Menentukan warna, font, dan ukuran teks */
+body {
+  color: #444;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* Menentukan warna dan garis bawah pada tombol "Kirim" */
+#chat-form button[type=submit] {
+  background-color: #4285F4;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 2px;
+  padding: 6px 8px;
+}
+
+/* Menentukan warna dan garis bawah pada tombol "Kirim" ketika di-hover */
+#chat-form button[type=submit]:hover {
+  background-color: #357AE8;
+}
+
+/* Menentukan garis bawah pada input pesan */
+#message-input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 6px 8px;
+  width: calc(100% - 100px);
+}
+
+/* Menentukan warna, font, dan margen pada balasan dari GPT */
+#response {
+  background-color: #f6f6f6;
+  border-radius: 4px;
+  color: #444;
+  font-size: 14px;
+  margin: 16px 0;
+  padding: 8px;
+}
