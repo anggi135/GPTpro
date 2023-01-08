@@ -1,0 +1,24 @@
+<!-- Memasukkan dependensi GPT -->
+<script src="https://unpkg.com/@openai/gpt-3@1.0.0/dist/gpt-3.min.js"></script>
+
+<!-- Membuat elemen HTML untuk form pesan dan tombol "Kirim" -->
+<form id="chat-form">
+  <input type="text" id="message-input" placeholder="Tuliskan pesan Anda di sini">
+  <button type="submit">Kirim</button>
+</form>
+
+<!-- Membuat elemen HTML untuk menampilkan balasan dari GPT -->
+<div id="response"></div>
+
+<!-- Kelas utama aplikasi chat -->
+<script>
+  // Inisialisasi API GPT
+  const gpt3 = new GPT3("YOUR_API_KEY", "YOUR_MODEL_NAME");
+
+  // Tombol "Kirim" yang terdapat di form pesan
+  const sendButton = document.querySelector("#chat-form button[type=submit]");
+
+  // Input untuk menuliskan pesan
+  const messageInput = document.querySelector("#message-input");
+
+  // Elemen HTML untuk menampilkan balasan
