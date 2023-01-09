@@ -1,6 +1,12 @@
 <!-- Memasukkan dependensi GPT -->
 <script src="https://unpkg.com/@openai/gpt-3@1.0.0/dist/gpt-3.min.js"></script>
-<link rel="stylesheet" href="main.css">
+
+<!-- Memasukkan file CSS -->
+<link rel="stylesheet" href="/path/to/css/style.css">
+
+<!-- Membuat elemen canvas untuk background -->
+<canvas id="chat-background" width="500" height="500"></canvas>
+
 <!-- Membuat elemen HTML untuk form pesan dan tombol "Kirim" -->
 <form id="chat-form">
   <input type="text" id="message-input" placeholder="Tuliskan pesan Anda di sini">
@@ -10,10 +16,10 @@
 <!-- Membuat elemen HTML untuk menampilkan balasan dari GPT -->
 <div id="response"></div>
 
-<!-- Memasukkan kode JavaScript untuk mengirim pesan ke GPT dan menampilkan balasan -->
+<!-- Memasukkan kode JavaScript untuk mengirim pesan ke GPT, menampilkan balasan, dan mengatur background canvas -->
 <script>
   // Inisialisasi API GPT
-  const gpt3 = new GPT3("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", "Ada");
+  const gpt3 = new GPT3("YOUR_API_KEY", "YOUR_MODEL_NAME");
 
   // Menentukan aksi yang dilakukan ketika form pesan dikirim
   document.querySelector("#chat-form").addEventListener("submit", e => {
@@ -22,3 +28,14 @@
 
     // Mengirim pesan ke GPT dan menyimpan balasan yang diterima
     const response = gpt3.sendMessage(document.querySelector("#message-input").value);
+
+    // Menampilkan balasan dari GPT
+    document.querySelector("#response").innerHTML = response;
+  });
+
+  // Menentukan warna background canvas
+  const ctx = document.getElementById("chat-background").getContext("2d");
+  ctx.fillStyle = "#F6F6F6";
+
+  // Menggambar background pada canvas
+  ctx.fillRect(0, 0, canvas.width, canvas
