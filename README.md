@@ -21,3 +21,26 @@ Setelah itu, program menginisialisasi API Blogspot menggunakan credential yang t
 Program terakhir memanggil fungsi create_post dengan parameter yang sesuai yaitu ID blogspot, judul artikel, dan konten artikel.
 
 Dengan menggunakan program ini, pengguna dapat dengan mudah mengambil informasi dari sebuah RSS feed dan memposting artikel ke Blogspot secara otomatis dengan memanfaatkan API OpenAI dan Google.
+
+
+#auto with cronjob
+Untuk menjalankan kode tersebut secara otomatis menggunakan Cron Job, berikut adalah langkah-langkahnya:
+
+1. Buka terminal pada sistem operasi Anda.
+2. Jalankan perintah `crontab -e` untuk membuka file konfigurasi Cron Job.
+3. Tambahkan baris berikut pada akhir file konfigurasi tersebut:
+
+   ```
+   * * * * * python /auto.py
+   ```
+
+   Keterangan:
+   
+   - Tanda `*` pada setiap kolom menunjukkan bahwa perintah akan dijalankan setiap menit, setiap jam, setiap hari, setiap bulan, dan setiap hari dalam seminggu.
+   - Ganti `/auto.py` dengan path ke file script Anda yang akan dijalankan. Pastikan path-nya benar dan script tersebut dapat dijalankan menggunakan Python.
+   
+4. Simpan file konfigurasi Cron Job dengan menekan tombol `Ctrl + X`, lalu tekan tombol `Y` untuk menyimpan perubahan, dan tekan `Enter`.
+5. Cron Job sekarang akan dijalankan setiap menit untuk menjalankan script tersebut secara otomatis.
+
+Pastikan bahwa sistem operasi Anda sudah diatur dengan benar untuk menjalankan Cron Job. Jika Anda tidak yakin, Anda dapat menghubungi administrator sistem Anda untuk mendapatkan bantuan. Selain itu, pastikan juga bahwa lingkungan yang dibutuhkan oleh script telah diatur dengan benar pada saat menjalankan Cron Job.
+
