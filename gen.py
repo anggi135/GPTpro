@@ -15,5 +15,5 @@ credentials = {
     "scopes": ["https://www.googleapis.com/auth/blogger"]
 }
 
-with open('path/ke/credential.json', 'w') as f:
+with open('credential.json', 'w') as f:
     json.dump(credentials, f)
