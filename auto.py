@@ -43,7 +43,7 @@ from bs4 import BeautifulSoup
 import requests
 
 # Path ke file credential dari akun google
-SERVICE_ACCOUNT_FILE = 'path/ke/credential.json'
+SERVICE_ACCOUNT_FILE = 'credential.json'
 
 # Inisialisasi credential
 creds = None
