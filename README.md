@@ -23,7 +23,7 @@ Program terakhir memanggil fungsi create_post dengan parameter yang sesuai yaitu
 Dengan menggunakan program ini, pengguna dapat dengan mudah mengambil informasi dari sebuah RSS feed dan memposting artikel ke Blogspot secara otomatis dengan memanfaatkan API OpenAI dan Google.
 
 
-###auto with cronjob
+### auto with cronjob
 
 Untuk menjalankan kode tersebut secara otomatis menggunakan Cron Job, berikut adalah langkah-langkahnya:
 
