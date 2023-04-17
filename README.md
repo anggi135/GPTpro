@@ -45,3 +45,16 @@ Untuk menjalankan kode tersebut secara otomatis menggunakan Cron Job, berikut ad
 
 Pastikan bahwa sistem operasi Anda sudah diatur dengan benar untuk menjalankan Cron Job. Jika Anda tidak yakin, Anda dapat menghubungi administrator sistem Anda untuk mendapatkan bantuan. Selain itu, pastikan juga bahwa lingkungan yang dibutuhkan oleh script telah diatur dengan benar pada saat menjalankan Cron Job.
 
+### jangn lupa mengubah gen.py
+
+Untuk menjalankan kode tersebut, Anda harus memastikan bahwa Python sudah terinstal pada komputer Anda, dan modul json sudah terpasang.
+
+Anda juga perlu mengisi nilai variabel di dalam dictionary credentials dengan nilai yang sesuai. Terdapat beberapa nilai yang harus diisi yaitu:
+
+- client_id: ID klien dari proyek Anda di Console Cloud Google.
+- client_secret: Kunci rahasia dari proyek Anda di Console Cloud Google.
+- refresh_token: Token akses segar yang diperoleh dari permintaan pertama yang diotorisasi oleh pengguna.
+- user_agent: Nama aplikasi atau nama agen pengguna yang diinginkan.
+- scopes: Daftar izin yang diminta oleh aplikasi.
+
+Setelah Anda mengisi nilai variabel tersebut, Anda dapat menjalankan kode tersebut untuk membuat file JSON bernama "credential.json" dengan isi dictionary credentials. File JSON ini dapat digunakan untuk mengakses API Google, khususnya API Blogger.
