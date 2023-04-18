@@ -1,5 +1,5 @@
 ### GPTpro
-Pro GPT chat for user
+Pro GPT
 File py
 
 Kode yang diberikan adalah sebuah program Python yang memanfaatkan beberapa API untuk mengambil informasi dari sebuah RSS feed dan kemudian memposting artikel ke sebuah blog di Blogspot.
