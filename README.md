@@ -22,6 +22,54 @@ Program terakhir memanggil fungsi create_post dengan parameter yang sesuai yaitu
 
 Dengan menggunakan program ini, pengguna dapat dengan mudah mengambil informasi dari sebuah RSS feed dan memposting artikel ke Blogspot secara otomatis dengan memanfaatkan API OpenAI dan Google.
 
+### gen.py
+
+Kode yang diberikan sudah hampir lengkap, namun perlu melakukan langkah tambahan untuk mengisi nilai dari access_token dan token_expiry. Langkahnya adalah:
+
+Import library google.auth.transport.requests
+Import library google.oauth2.credentials
+Buat objek dari kelas Credentials dengan memanggil constructor dengan parameter dictionary credentials
+Cek apakah credential masih valid atau tidak dengan memanggil method valid dari objek credentials
+Jika credential masih valid, dapat langsung mengisi nilai dari access_token dan token_expiry dari objek credentials ke dalam dictionary credentials
+Jika credential tidak valid, dapat memanggil method refresh dari objek credentials untuk memperbarui access_token dan token_expiry
+Simpan kembali nilai dictionary credentials ke dalam file credential.json dengan memanggil json.dump seperti yang sudah dijelaskan pada kode yang diberikan.
+Berikut adalah kode lengkapnya:
+
+python
+Copy code
+import json
+import google.auth.transport.requests
+from google.oauth2.credentials import Credentials
+
+credentials = {
+    "client_id": "your_client_id",
+    "client_secret": "your_client_secret",
+    "refresh_token": "your_refresh_token",
+    "access_token": "",
+    "token_expiry": "",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "user_agent": "your_app_name",
+    "revoke_uri": "https://oauth2.googleapis.com/revoke",
+    "id_token": None,
+    "id_token_jwt": None,
+    "token_response": None,
+    "scopes": ["https://www.googleapis.com/auth/blogger"]
+}
+
+creds = Credentials.from_authorized_user_info(info=credentials)
+
+if not creds.valid:
+    creds.refresh(google.auth.transport.requests.Request())
+
+credentials['access_token'] = creds.token
+credentials['token_expiry'] = creds.expiry.isoformat()
+
+with open('credential.json', 'w') as f:
+    json.dump(credentials, f)
+Pastikan untuk mengisi nilai dari your_client_id, your_client_secret, dan your_refresh_token dengan nilai yang sesuai dari akun Google yang akan digunakan. Selain itu, pastikan juga untuk mengganti your_app_name dengan nama aplikasi yang akan digunakan.
+
+
+
 
 ### auto with cronjob
 
