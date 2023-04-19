@@ -37,6 +37,8 @@ Berikut adalah kode lengkapnya:
 
 python
 Copy code
+
+```
 import json
 import google.auth.transport.requests
 from google.oauth2.credentials import Credentials
@@ -65,7 +67,7 @@ credentials['access_token'] = creds.token
 credentials['token_expiry'] = creds.expiry.isoformat()
 
 with open('credential.json', 'w') as f:
-    json.dump(credentials, f)
+    json.dump(credentials, f) ```
 Pastikan untuk mengisi nilai dari your_client_id, your_client_secret, dan your_refresh_token dengan nilai yang sesuai dari akun Google yang akan digunakan. Selain itu, pastikan juga untuk mengganti your_app_name dengan nama aplikasi yang akan digunakan.
 
 
